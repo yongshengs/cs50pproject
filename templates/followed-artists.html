@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Followed Artists{% endblock %}
+
+{% block content %}
+    <h2>Followed Artists</h2>
+    <div class="row">
+        {% for artist in followed_artists %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ artist.images[0].url }}" class="card-img-top" alt="Artist Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ artist.name }}</h5>
+                        <p class="card-text">Followers: {{ artist.followers.total|format_number }}</p>
+                        <p class="card-text">Popularity: {{ artist.popularity }}</p>
+                        <a href="{{ artist.external_urls.spotify }}" class="btn btn-primary" target="_blank">Open Artist</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

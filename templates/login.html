@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section>
+        <a id="login-button" href="{{ auth_url }}"></a>
+    </section>
+{% endblock %}
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}My Playlists{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>My Playlists</h2>
+    <div class="row">
+        {% for playlist in playlists %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ playlist.images[0].url }}" class="card-img-top" alt="Playlist Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ playlist.name }}</h5>
+                    <p class="card-text">By: {{ playlist.owner.display_name }}</p>
+                    <a href="{{ playlist.external_urls.spotify }}" class="btn btn-primary" target="_blank">Open Playlist</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
