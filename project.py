@@ -6,7 +6,7 @@ from flask import Flask, redirect, request, jsonify, session, render_template
 
 
 app = Flask(__name__)
-app.secret_key = 'e5Sy9rACcG-quPHXAKouz'
+app.secret_key = ''
 
 # Define a custom Jinja2 filter
 def format_number(value):
@@ -14,8 +14,8 @@ def format_number(value):
 # Add the filter to Jinja2 environment
 app.jinja_env.filters['format_number'] = format_number
 
-CLIENT_ID='9b185c0cc0104b5c8c447d2e047ce804'
-CLIENT_SECRET='6777728c8b014d8ba5d8d58b47eef879'
+CLIENT_ID=''
+CLIENT_SECRET=''
 REDIRECT_URI='http://localhost:5000/callback'
 
 AUTH_URL='https://accounts.spotify.com/authorize/'
